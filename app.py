@@ -1,17 +1,21 @@
-# app.py
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
-#Flask 객체 인스턴스 생성
 app = Flask(__name__)
 
 
-@app.route('/') # 접속하는 url
-def index():
-  return render_template('index.html')
+@app.route('/', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        search_query1 = request.form.get('searchQuery1')
+        search_query2 = request.form.get('searchQuery2')
+        search_query3 = request.form.get('searchQuery3')
 
-if __name__=="__main__":
+        # 여기에서 검색 결과를 처리하는 로직을 구현합니다.
+        # 예를 들어, 검색 쿼리를 기반으로 데이터베이스에서 결과를 조회하거나 외부 API에 요청하여 결과를 가져올 수 있습니다.
+        # 가져온 결과를 result 변수에 저장합니다.
 
-  app.run(debug=True)
-  # host 등을 직접 지정하고 싶다면
-  # app.run(host="127.0.0.1", port="5000", debug=True)
+        return render_template('result.html', search_query1=search_query1, search_query2=search_query2, search_query3=search_query3)
+    return render_template('index.html')
 
+if __name__ == '__main__':
+    app.run()
