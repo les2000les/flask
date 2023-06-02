@@ -13,5 +13,5 @@ df = pd.DataFrame(data)
 serialized_df = pickle.dumps(df)
 
 # DataFrame 전송
-response = requests.post('http://localhost:9999/receive-dataframe', data=serialized_df)
+response = requests.post('http://127.0.0.1:5000/receive-dataframe', data=serialized_df)
 print(response.text)
