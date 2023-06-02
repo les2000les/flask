@@ -1,6 +1,6 @@
 # flask
 
-## Flask를 사용하여 REST API를 개발할 때 다음과 같은 요소들이 포함됩니다:
+## Flask를 사용하여 REST API를 개발할 때 고려할 요소:
 
 1. 라우팅: Flask는 @app.route() 데코레이터를 사용하여 URL 경로와 HTTP 메서드에 따른 핸들러 함수를 정의합니다. 예를 들어, @app.route('/users', methods=['GET'])는 /users 경로로 GET 요청이 들어왔을 때 실행할 핸들러 함수를 정의합니다.
 
